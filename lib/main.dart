@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false, // ปิด debug banner
       home: HomeScreen(), // เรียกใช้ HomeScreen
     );
   }

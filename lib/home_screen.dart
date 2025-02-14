@@ -47,23 +47,28 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         backgroundColor: Colors.white,
+        elevation: 0,
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 25),
             child: const Icon(Icons.person_2_outlined),
           )
         ],
-          bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(1.0),
-            child: Container(
-              color: const Color.fromARGB(255, 240, 240, 240),
-              height: 2.0,
-            ),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(1.0),
+          child: Container(
+            color: const Color.fromARGB(255, 240, 240, 240),
+            height: 2.0,
           ),
+        ),
       ),
-      body: IndexedStack(
-        index: _selectedindex,
-        children: _navigationMap.values.map((page) => page["screen"]!).toList(),
+      body: Container(
+        color: Colors.white,
+        child: IndexedStack(
+          index: _selectedindex,
+          children:
+              _navigationMap.values.map((page) => page["screen"]!).toList(),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedindex,
@@ -74,26 +79,31 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Image.asset("assets/icons/logo.png", width: 40, height: 40),
             label: "",
+            backgroundColor: Colors.white,
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: "",
+            backgroundColor: Colors.white,
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border_outlined),
             label: "",
+            backgroundColor: Colors.white,
           ),
           const BottomNavigationBarItem(
             icon: Icon(Icons.shopping_bag_outlined),
             label: "",
+            backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Image.asset("assets/icons/adiclub.png", width: 70, height: 70),
+            icon:
+                Image.asset("assets/icons/adiclub.png", width: 70, height: 70),
             label: "",
+            backgroundColor: Colors.white,
           ),
         ],
       ),
     );
   }
 }
-
